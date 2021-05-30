@@ -20,7 +20,6 @@ def make_thumbnails(
         format = "JPEG"):
     gallery_dir = Path(path_gallery)
     thumbnail_dir = Path(path_thumb)
-    excepted = False                    # flag, checks if program ran into PIL.UnidentifiedImageError and finally stops program
     if not thumbnail_dir.exists():
         thumbnail_dir.mkdir(parents=True, exist_ok=True)
 
@@ -52,10 +51,9 @@ def make_thumbnails(
                 else:
                     img.save(thumbnail_dir.joinpath(f"{file.name[0:file.name.find('.')]}_thumb.{format.lower()}"), format if format else None)
         except UnidentifiedImageError as error:
-            excepted = True
             if verbose: print(error)
 
-    if verbose and excepted: input("Done! Press any key to terminate...\n")
+    if verbose: input("Done! Press enter to terminate...\n")
 
 if __name__ == "__main__":
     make_thumbnails(verbose=True)
