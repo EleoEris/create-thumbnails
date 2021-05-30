@@ -12,8 +12,8 @@ from PIL import Image, UnidentifiedImageError
 # format                - see PIL.format
 
 def make_thumbnails(
-        path_gallery = "\\static\\gallery",
-        path_thumb = "\\static\\gallery_thumb",
+        path_gallery = "static\\gallery",
+        path_thumb = "static\\gallery_thumb",
         thumb_size = (400, 400),
         pattern = None,
         verbose = False, 
