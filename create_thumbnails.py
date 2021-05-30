@@ -6,8 +6,8 @@ from PIL import Image, UnidentifiedImageError
 # kwargs:
 # path_gallery          - path to original images
 # path_thumb            - directory to which thumbnails are saved
-# thumb_size            - size of the thumbnail
-# pattern               - function that takes original filename and changed it to the thumbnail name
+# thumb_size            - size of the thumbnail in pixels
+# pattern               - function that takes original filename and changes it to the thumbnail name (needs to return string)
 # verbose               - will stop the program with an input() before the end in case you want to check the files that weren't identified as images
 # format                - see PIL.format
 
